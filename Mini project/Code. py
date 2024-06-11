@@ -1,0 +1,152 @@
+umn=0, padx=5, pady=5)
+entry_cust_last_name = Entry(frame_cust_form)
+entry_cust_last_name.grid(row=2, column=1, padx=5, pady=5)
+
+Label(frame_cust_form, text="Email").grid(row=3, column=0, padx=5, pady=5)
+entry_cust_email = Entry(frame_cust_form)
+entry_cust_email.grid(row=3, column=1, padx=5, pady=5)
+
+Label(frame_cust_form, text="Phone").grid(row=4, column=0, padx=5, pady=5)
+entry_cust_phone = Entry(frame_cust_form)
+entry_cust_phone.grid(row=4, column=1, padx=5, pady=5)
+
+Button(frame_cust_form, text="Add Customer", command=add_customer).grid(row=5, column=1, pady=10)
+
+frame_cust_tree = Frame(tab_customers)
+frame_cust_tree.pack(side=TOP, fill=BOTH, expand=True)
+
+tree_customers = ttk.Treeview(frame_cust_tree, columns=("CustomerID", "FirstName", "LastName", "Email", "Phone"), show='headings')
+tree_customers.heading("CustomerID", text="Customer ID")
+tree_customers.heading("FirstName", text="First Name")
+tree_customers.heading("LastName", text="Last Name")
+tree_customers.heading("Email", text="Email")
+tree_customers.heading("Phone", text="Phone")
+tree_customers.pack(fill=BOTH, expand=True)
+
+Button(frame_cust_tree, text="View Customers", command=view_customers).pack(side=LEFT, padx=5, pady=5)
+
+# Sales Tab
+frame_sale_form = Frame(tab_sales)
+frame_sale_form.pack(side=TOP, fill=X, pady=10, padx=10)
+
+Label(frame_sale_form, text="Sale ID").grid(row=0, column=0, padx=5, pady=5)
+entry_sale_id = Entry(frame_sale_form)
+entry_sale_id.grid(row=0, column=1, padx=5, pady=5)
+
+Label(frame_sale_form, text="Date").grid(row=1, column=0, padx=5, pady=5)
+entry_sale_date = Entry(frame_sale_form)
+entry_sale_date.grid(row=1, column=1, padx=5, pady=5)
+
+Label(frame_sale_form, text="Total Price").grid(row=2, column=0, padx=5, pady=5)
+entry_sale_total_price = Entry(frame_sale_form)
+entry_sale_total_price.grid(row=2, column=1, padx=5, pady=5)
+
+Button(frame_sale_form, text="Add Sale", command=add_sale).grid(row=3, column=1, pady=10)
+
+frame_sale_tree = Frame(tab_sales)
+frame_sale_tree.pack(side=TOP, fill=BOTH, expand=True)
+
+tree_sales = ttk.Treeview(frame_sale_tree, columns=("SaleID", "Date", "TotalPrice"), show='headings')
+tree_sales.heading("SaleID", text="Sale ID")
+tree_sales.heading("Date", text="Date")
+tree_sales.heading("TotalPrice", text="Total Price")
+tree_sales.pack(fill=BOTH, expand=True)
+
+Button(frame_sale_tree, text="View Sales", command=view_sales).pack(side=LEFT, padx=5, pady=5)
+
+# Suppliers Tab
+frame_supplier_form = Frame(tab_suppliers)
+frame_supplier_form.pack(side=TOP, fill=X, pady=10, padx=10)
+
+Label(frame_supplier_form, text="Supplier ID").grid(row=0, column=0, padx=5, pady=5)
+entry_supplier_id = Entry(frame_supplier_form)
+entry_supplier_id.grid(row=0, column=1, padx=5, pady=5)
+
+Label(frame_supplier_form, text="Supplier Name").grid(row=1, column=0, padx=5, pady=5)
+entry_supplier_name = Entry(frame_supplier_form)
+entry_supplier_name.grid(row=1, column=1, padx=5, pady=5)
+
+Label(frame_supplier_form, text="Contact Info").grid(row=2, column=0, padx=5, pady=5)
+entry_supplier_contact_info = Entry(frame_supplier_form)
+entry_supplier_contact_info.grid(row=2, column=1, padx=5, pady=5)
+
+Button(frame_supplier_form, text="Add Supplier", command=add_supplier).grid(row=3, column=1, pady=10)
+
+frame_supplier_tree = Frame(tab_suppliers)
+frame_supplier_tree.pack(side=TOP, fill=BOTH, expand=True)
+
+tree_suppliers = ttk.Treeview(frame_supplier_tree, columns=("SupplierID", "SupplierName", "ContactInfo"), show='headings')
+tree_suppliers.heading("SupplierID", text="Supplier ID")
+tree_suppliers.heading("SupplierName", text="Supplier Name")
+tree_suppliers.heading("ContactInfo", text="Contact Info")
+tree_suppliers.pack(fill=BOTH, expand=True)
+
+Button(frame_supplier_tree, text="View Suppliers", command=view_suppliers).pack(side=LEFT, padx=5, pady=5)
+
+# Products Tab
+frame_product_form = Frame(tab_products)
+frame_product_form.pack(side=TOP, fill=X, pady=10, padx=10)
+
+Label(frame_product_form, text="Product ID").grid(row=0, column=0, padx=5, pady=5)
+entry_product_id = Entry(frame_product_form)
+entry_product_id.grid(row=0, column=1, padx=5, pady=5)
+
+Label(frame_product_form, text="Product Name").grid(row=1, column=0, padx=5, pady=5)
+entry_product_name = Entry(frame_product_form)
+entry_product_name.grid(row=1, column=1, padx=5, pady=5)
+
+Label(frame_product_form, text="Description").grid(row=2, column=0, padx=5, pady=5)
+entry_product_description = Entry(frame_product_form)
+entry_product_description.grid(row=2, column=1, padx=5, pady=5)
+
+Label(frame_product_form, text="Price").grid(row=3, column=0, padx=5, pady=5)
+entry_product_price = Entry(frame_product_form)
+entry_product_price.grid(row=3, column=1, padx=5, pady=5)
+
+Label(frame_product_form, text="Stock Quantity").grid(row=4, column=0, padx=5, pady=5)
+entry_product_stock_quantity = Entry(frame_product_form)
+entry_product_stock_quantity.grid(row=4, column=1, padx=5, pady=5)
+
+Button(frame_product_form, text="Add Product", command=add_product).grid(row=5, column=1, pady=10)
+
+frame_product_tree = Frame(tab_products)
+frame_product_tree.pack(side=TOP, fill=BOTH, expand=True)
+
+tree_products = ttk.Treeview(frame_product_tree, columns=("ProductID", "ProductName", "Description", "Price", "StockQuantity"), show='headings')
+tree_products.heading("ProductID", text="Product ID")
+tree_products.heading("ProductName", text="Product Name")
+tree_products.heading("Description", text="Description")
+tree_products.heading("Price", text="Price")
+tree_products.heading("StockQuantity", text="Stock Quantity")
+tree_products.pack(fill=BOTH, expand=True)
+
+Button(frame_product_tree, text="View Products", command=view_products).pack(side=LEFT, padx=5, pady=5)
+
+# Categories Tab
+frame_category_form = Frame(tab_categories)
+frame_category_form.pack(side=TOP, fill=X, pady=10, padx=10)
+
+Label(frame_category_form, text="Category ID").grid(row=0, column=0, padx=5, pady=5)
+entry_category_id = Entry(frame_category_form)
+entry_category_id.grid(row=0, column=1, padx=5, pady=5)
+
+Label(frame_category_form, text="Category Name").grid(row=1, column=0, padx=5, pady=5)
+entry_category_name = Entry(frame_category_form)
+entry_category_name.grid(row=1, column=1, padx=5, pady=5)
+
+Button(frame_category_form, text="Add Category", command=add_category).grid(row=2, column=1, pady=10)
+
+frame_category_tree = Frame(tab_categories)
+frame_category_tree.pack(side=TOP, fill=BOTH, expand=True)
+
+tree_categories = ttk.Treeview(frame_category_tree, columns=("CategoryID", "CategoryName"), show='headings')
+tree_categories.heading("CategoryID", text="Category ID")
+tree_categories.heading("CategoryName", text="Category Name")
+tree_categories.pack(fill=BOTH, expand=True)
+
+Button(frame_category_tree, text="View Categories", command=view_categories).pack(side=LEFT, padx=5, pady=5)
+
+root.mainloop()
+
+# Close the database connection when done
+conn.close()
